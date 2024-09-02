@@ -1,0 +1,196 @@
+{
+  "vehiculos": {
+    "ABC123": {
+      "tipo": "carro",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 10:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 11:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 3000,
+          "puesto": 1
+        },
+        {
+          "entrada": "Mon Sep 02 2024 13:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 14:30:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 90,
+          "costo": 4500,
+          "puesto": 2
+        }
+      ]
+    },
+    "DEF456": {
+      "tipo": "carro",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 08:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 09:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 3000,
+          "puesto": 3
+        },
+        {
+          "entrada": "Mon Sep 02 2024 11:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 12:30:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 90,
+          "costo": 4500,
+          "puesto": 4
+        },
+        {
+          "entrada": "Mon Sep 02 2024 15:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 16:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 3000,
+          "puesto": 5
+        }
+      ]
+    },
+    "GHI789": {
+      "tipo": "carro",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 09:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 10:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 3000,
+          "puesto": 6
+        }
+      ]
+    },
+    "JKL012": {
+      "tipo": "carro",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 11:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 12:30:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 90,
+          "costo": 4500,
+          "puesto": 7
+        },
+        {
+          "entrada": "Mon Sep 02 2024 15:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 16:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 3000,
+          "puesto": 8
+        }
+      ]
+    },
+    "MNO345": {
+      "tipo": "moto",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 09:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 10:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 1500,
+          "puesto": 9
+        },
+        {
+          "entrada": "Mon Sep 02 2024 14:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 15:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 1500,
+          "puesto": 10
+        }
+      ]
+    },
+    "PQR678": {
+      "tipo": "moto",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 08:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 09:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 1500,
+          "puesto": 11
+        }
+      ]
+    },
+    "STU901": {
+      "tipo": "moto",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 14:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 15:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 1500,
+          "puesto": 12
+        }
+      ]
+    },
+    "VWX234": {
+      "tipo": "moto",
+      "ingresado": true,
+      "visitas": [
+        {
+          "entrada": "Mon Sep 02 2024 16:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 17:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 1500,
+          "puesto": 13
+        },
+        {
+          "entrada": "Mon Sep 02 2024 18:00:00 GMT-0500 (hora estándar de Colombia)",
+          "salida": "Mon Sep 02 2024 19:00:00 GMT-0500 (hora estándar de Colombia)",
+          "tiempo": 60,
+          "costo": 1500,
+          "puesto": 14
+        }
+      ]
+    }
+  },
+  "puestos": {
+    "carros": [
+      { "id": 1, "disponible": false },
+      { "id": 2, "disponible": false },
+      { "id": 3, "disponible": false },
+      { "id": 4, "disponible": false },
+      { "id": 5, "disponible": false },
+      { "id": 6, "disponible": true },
+      { "id": 7, "disponible": true },
+      { "id": 8, "disponible": true },
+      { "id": 9, "disponible": true },
+      { "id": 10, "disponible": true },
+      { "id": 11, "disponible": true },
+      { "id": 12, "disponible": true },
+      { "id": 13, "disponible": true },
+      { "id": 14, "disponible": true },
+      { "id": 15, "disponible": true },
+      { "id": 16, "disponible": true },
+      { "id": 17, "disponible": true },
+      { "id": 18, "disponible": true },
+      { "id": 19, "disponible": true },
+      { "id": 20, "disponible": true }
+    ],
+    "motos": [
+      { "id": 1, "disponible": true },
+      { "id": 2, "disponible": true },
+      { "id": 3, "disponible": true },
+      { "id": 4, "disponible": true },
+      { "id": 5, "disponible": true },
+      { "id": 6, "disponible": false },
+      { "id": 7, "disponible": false },
+      { "id": 8, "disponible": false },
+      { "id": 9, "disponible": false },
+      { "id": 10, "disponible": false },
+      { "id": 11, "disponible": false },
+      { "id": 12, "disponible": false },
+      { "id": 13, "disponible": true },
+      { "id": 14, "disponible": true },
+      { "id": 15, "disponible": true },
+      { "id": 16, "disponible": true },
+      { "id": 17, "disponible": true },
+      { "id": 18, "disponible": true },
+      { "id": 19, "disponible": true },
+      { "id": 20, "disponible": true }
+    ]
+  }
+}

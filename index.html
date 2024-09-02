@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Estilos.css" />
+    <link rel="icon" href="./Archivos/Maqueta Parqueadero  (2).png" type="png">
+    <title>ParkEasy</title>
+</head>
+
+<body>
+    <header class="header-container">
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="car-outline" id="icono"></ion-icon>
+                        </span>
+                        <span class="title1"> ParkEasy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Registro</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </span>
+                        <span class="title">Salida de vehiculo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="receipt-outline"></ion-icon>
+                        </span>
+                        <span class="title">Factura</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="newspaper-outline"></ion-icon>
+                        </span>
+                        <span class="title">Reportes Historicos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ganacias</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="file-tray-full-outline"></ion-icon>
+                        </span>
+                        <span class="title">Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="title">Vehiculos ingresados</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title"> Cerrar Sesion</span>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <!-- ============================ Main ========= -->
+
+    <main class="main">
+        <section class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="search">
+                <label>
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Ingrese la placa">
+                </label>
+            </div>
+            <div class="timeitem"> <span id="Fecha_Vivo">09/01/2024</span>
+                 <span id="Hora_Vivo" >9:35Am</span>
+                 </div>
+        </section>
+        <section>
+            <div class="infoRecuadros">
+                <div class="Cuposdisponibles"> <span>10/50</span><ion-icon name="car-sport-outline"></ion-icon> </div>
+                <div class="CupoMotocicletas"> <span>12/100</span> <ion-icon name="bicycle-outline"></ion-icon> </div>
+                <div class="Ganaciasdeldia"> <span>Ganancias</span> <ion-icon name="cash-outline"></ion-icon></div>
+                <div class="salida"> <span>Dar Salida </span> <ion-icon name="exit-outline"> </ion-icon></div>
+            </div>
+        </section>
+        <section class="ContenedorPadre">
+            <article class="ContainerPrimario">
+                <div class="vehiculos">
+                    <ion-icon name="car-outline" id="icono"></ion-icon>
+                    <div>
+                        <p>Fecha</p>
+                        <span class="fecha">09/12/2024</span>
+                    </div>
+                    <div>
+                        <p>Ingreso</p>
+                        <span class="ingreso">10:00PM</span>
+                    </div>
+                    <div>
+                        <p>Placa</p>
+                        <span class="placa">FLM 848</span>
+                    </div>
+                    <div>
+                        <p>Tiempo</p>
+                        <span class="Tiempo">1</span>
+                    </div>
+                    <div>
+                        <p>Costo</p>
+                        <span class="Costo">10.000</span>
+                    </div>
+
+                    <button> Salida</button>
+                </div>
+                
+            </article>
+            <article class="Containersecundario">
+                <div class="ingresado">
+                    <span class="title2"> ParkEasy</span>
+                    <ion-icon name="car-outline" class="icono icono2"></ion-icon>
+                    <p class="placa_ingresado">FLM - 848</p>
+                    <p class="Fecha_ingresado"> 09/12/2024 </p>
+                    <div>
+                        <p>Entrada:</p><span class="Entrada_ingreso"> 4:03am</span>
+                    </div>
+                    <div>
+                        <p>Tiempo:</p><span class="Tiempo_ingreso"> 40min</span>
+                    </div>
+                    <div>
+                        <p>Costo:</p><span class="Costo_ingreso"> 3.000</span>
+                    </div>
+                    <div>
+                        <p>Puesto:</p><span class="Puesto_ingreso">50</span>
+                    </div>
+                    <button> Salida</b>
+                </div>
+                
+                
+            </article>
+        </section>
+    </main>
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./main.js"></script>
+
+    <!-- Templates Para todo  -->
+    <template id="vehiculo-template">
+        <div class="vehiculos">
+            <ion-icon name="car-outline" id="icono"></ion-icon>
+            <div>
+                <p>Fecha</p>
+                <span class="fecha">09/12/2024</span>
+            </div>
+            <div>
+                <p>Ingreso</p>
+                <span class="ingreso">10:00PM</span>
+            </div>
+            <div>
+                <p>Placa</p>
+                <span class="placa">FLM 848</span>
+            </div>
+            <div>
+                <p>Tiempo</p>
+                <span class="Tiempo">1</span>
+            </div>
+            <div>
+                <p>Costo</p>
+                <span class="Costo">10.000</span>
+            </div>
+
+            <button> Salida</button>
+        </div>
+    </template>
+
+    <template id="Ingresado">
+        <div class="ingresado">
+            <span class="title2"> ParkEasy</span>
+            <ion-icon name="car-outline" class="icono icono2"></ion-icon>
+            <p class="placa_ingresado">FLM - 848</p>
+            <p class="Fecha_ingresado"> 09/12/2024 </p>
+            <div>
+                <p>Entrada:</p><span class="Entrada_ingreso"> 4:03am</span>
+            </div>
+            <div>
+                <p>Tiempo:</p><span class="Tiempo_ingreso"> 40min</span>
+            </div>
+            <div>
+                <p>Costo:</p><span class="Costo_ingreso"> 3.000</span>
+            </div>
+            <div>
+                <p>Puesto:</p><span class="Puesto_ingreso">50</span>
+            </div>
+            <button> Salida</b>
+        </div>
+    </template>
+    <template id="Nuevo_Vehiculo">
+        <div class="Nuevo_Vehiculo">
+            <span class="title2"> ParkEasy</span>
+            <ion-icon name="car-outline" class="icono icono2"></ion-icon>
+
+            <label> <ion-icon name="search-outline"></ion-icon><input placeholder="Ingrese la placa" type="text"
+                    class="Busqueda"></label>
+            <p class="p">Hora de ingreso: </p>
+            <span class="Hora_nuevoVehiculo">4:52 PM</span>
+            <p>Selecione Tipo de Vehiculo</p>
+            <div>
+                <label>
+                    <input type="checkbox" name="option1" value="Option 1">
+                    <ion-icon name="car-sport-outline"></ion-icon>
+                </label>
+                <label>
+                    <input type="checkbox" name="option2" value="Option 2">
+                    <ion-icon name="bicycle-outline"></ion-icon>
+                </label>
+            </div>
+            <button> Ingresar</button>
+        </div>
+    </template>
+    <template id="Facturacion">
+        <div class="Facturacion">
+            <span class="title2"> ParkEasy</span>
+            <ion-icon name="car-outline" class="icono icono2"></ion-icon>
+            <p class="placa_ingresado">FLM - 848</p>
+            <p class="Fecha_ingresado"> 09/12/2024 </p>
+            <div>
+                <p>Entrada:</p><span class="Entrada_ingreso"> 4:03am</span>
+            </div>
+            <div>
+                <p>Tiempo:</p><span class="Tiempo_ingreso"> 60min</span>
+            </div>
+            <div>
+                <p>Costo:</p><span class="Costo_ingreso"> 3.000</span>
+            </div>
+            <div>
+                <p>Salida:</p><span class="Puesto_ingreso">5:03am</span>
+            </div>
+            <button> Facturar</b>
+        </div>
+
+    </template>
+
+</body>
+
+</html>

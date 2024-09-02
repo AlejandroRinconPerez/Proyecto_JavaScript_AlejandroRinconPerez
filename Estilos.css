@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    font-family: "Ubuntu",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+body{
+    min-height:100vh;
+    overflow-x: hidden;
+    
+}
+.header-container{
+    position: relative;
+    width: 100%;
+  
+
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active{
+    width: 80px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+   border-top-left-radius:30px ;
+   border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+   background-color: var(--white);
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+    color: var(--blue);
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width:60px;
+    height:60px ;
+    line-height:75px;
+    text-align: center;
+}
+.navigation ul li a .icon  ion-icon{
+    font-size: 1.74rem;
+}
+.mayus{
+    font-size: 4rem;
+
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height:60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top:-50px;
+    width: 50px;
+    height: 50px;
+    background-color:transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom:-50px;
+    width: 50px;
+    height: 50px;
+    background-color:transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+#icono{
+    width: 70px;
+    font-size: 4rem;
+}
+.title1{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height:60px;
+    text-align: start;
+    white-space: nowrap;
+    font-size: 2rem;
+}
+/* Aca empieza la zona main */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    background: var(--white);
+    transition:0.5s ;
+}
+
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: var(--gray);
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+   width: 100%;
+   height:40px;
+   border-radius: 40px;
+   padding: 5px 20px;
+   outline: none;
+   border: 1px solid var(--black2);
+   padding-left: 35px;
+   font-size: 18px;
+}
+.search label ion-icon{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+.timeitem{
+    position: relative;
+    border-radius: 50px;
+    height: 86%;
+    cursor: pointer;
+    margin-right: 3vw;
+    text-align: center;
+    display: flex;
+    font-size: 1.1rem; 
+    color: var(--black1);
+    background-color: #e2e2ec; 
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1.5vw;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+/*  ============= CONTENIDO PRINCIPAL =======================*/
+
+.infoRecuadros{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.infoRecuadros div {
+    width: 10vw;
+    min-width: 10vw;
+    text-align: center;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-top: 2vw;
+    color: var(--white);
+    font-size: 1.5vw;
+    font-weight: 500;
+    transition: 0.5s;
+    border: 1.5px solid var(--gray);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+
+}
+
+.infoRecuadros div:hover{
+    background-color: #f5f4ff; 
+    color:var(--blue) ;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+
+.infoRecuadros div ion-icon{
+    font-size: 3vw;
+    margin: 0.3vh;
+}
+
+.infoRecuadros div span{
+    padding: 0.3vw;
+    margin-top: 0.13vh;
+}
+.ContenedorPadre{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.ContainerPrimario{
+    border: 0.2vw solid var(--blue);
+    height: 68vh;
+    width: 70%;
+    margin-top: 2.5vw;
+    border-radius: 50px;
+    padding: 1vw;
+    overflow: auto;
+    background-color: var(--gray);
+
+}
+.ContainerPrimario:hover{
+    background-color: #ebebf0; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+}
+
+.ContainerPrimario::-webkit-scrollbar{
+    width: 1vw;  
+    height: 1vw;
+}
+
+.Containersecundario{
+    border: .2vw solid var(--blue);
+    height: 68vh;
+    width: 25%;
+    margin-top: 2.5vw;
+    border-radius: 50px;
+    padding: 1vw;
+    background-color: var(--gray);
+}
+.Containersecundario:hover{
+    background-color: #ebebf0; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+
+}
+
+/* Aca empiezan los templates */
+
+
+.vehiculos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: .2vw solid var(--blue);
+    border-radius: 50px;
+    margin: 1vw;
+}
+
+.vehiculos:hover{
+    background-color: #f5f4ff; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+}
+
+
+.vehiculos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vehiculos ion-icon {
+    color: #3b30b7;
+}
+.vehiculos button{
+    background-color: #6259d6; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+
+}
+.vehiculos button:hover {
+    background-color: #6259d6; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+}
+/* Tarheta de ingreso */
+
+.ingresado{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vw;
+    height: 100%;
+    width: 100%;
+
+}
+.placa_ingresado {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6259d6;
+    width: 100%;
+    text-align: center;
+    padding:  0 15px;
+    
+}
+.Fecha_ingresado{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--blue);
+    width: 100%;
+    text-align: center;
+}
+.ingresado ion-icon {
+    color: #6259d6;
+    font-size: 5rem;
+    width: 310vw;
+    height: 10vw;
+}
+.ingresado div{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0.4vw;
+    font-size: 1.5rem;
+    border-bottom: 0.2vw solid #6159d628;
+}
+.ingresado button{
+    background-color: #6259d6; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-top: 1vw;
+}
+.ingresado button:hover{
+    background-color: var(--blue); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+}
+.ingresado div span p{
+    width: 50%;
+    text-align: right;
+}
+.ingresado div span{
+    text-align: right;
+    width: 50%;
+}
+.title2{
+    position: relative;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--blue);
+    font-weight: 700;
+}
+/* Lable para ingresar los Vehiculos */
+
+.Nuevo_Vehiculo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.Nuevo_Vehiculo ion-icon[name="car-outline"]  {
+    font-size: 4rem;
+    color:#6259d6 ;
+}
+.Busqueda{
+    border-radius: 50px;
+    width: 100%;
+    padding:5px;
+    margin-left: 0.7vw;
+}
+.labelbusqueda{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.Nuevo_Vehiculo label ion-icon{
+    color: #3b30b7;
+    font-size: 1.5rem;
+}
+.Nuevo_Vehiculo label{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.Nuevo_Vehiculo div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+}
+.Nuevo_Vehiculo div ion-icon{
+    color: #6259d6;
+    font-size: 3rem;
+    cursor: pointer; 
+}
+.Nuevo_Vehiculo button{
+    background-color: #6259d6; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-top: 1vw;
+}
+.Nuevo_Vehiculo button:hover{
+    background-color: var(--blue); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+}
+.Nuevo_Vehiculo p {
+    color: #3b30b7;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 500;
+}
+.Hora_nuevoVehiculo{
+    color: #3b30b7;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 50px; 
+    padding: 5px;
+}
+/* Para Facturar de vehiculos*/
+.Facturacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.Facturacion ion-icon{
+    color: var(--blue);
+    font-size: 4rem;
+}
+.Facturacion div {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0.4vw;
+    font-size: 1.5rem;
+    border-bottom: 0.2vw solid #6159d628;
+}
+.Facturacion div p{
+    text-align: left;
+    width: 50%;
+}
+.Facturacion div span{
+    text-align: right;
+    width: 50%;
+}
+.Facturacion button{
+    background-color: #6259d6; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-top: 1vw;
+}
+.Facturacion button:hover{
+    background-color: var(--blue); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-2px); 
+}
+.placa_ingresado{
+    background-color: #6259d6; 
+    color: var(--white);
+    border-radius: 50px;
+    width: auto;
+    padding: 0 10px;
+}
