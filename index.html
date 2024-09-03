@@ -145,27 +145,26 @@
                 
             </article>
             <article class="Containersecundario">
-                <div class="ingresado">
+                <div class="Nuevo_Vehiculo">
                     <span class="title2"> ParkEasy</span>
                     <ion-icon name="car-outline" class="icono icono2"></ion-icon>
-                    <p class="placa_ingresado">FLM - 848</p>
-                    <p class="Fecha_ingresado"> 09/12/2024 </p>
+        
+                    <label> <ion-icon name="search-outline"></ion-icon><input id="input_nuevovehiculo" placeholder="Ingrese la placa" type="text"
+                            class="Busqueda">
+                        </label>
+                    <p>Selecione Tipo de Vehiculo</p>
                     <div>
-                        <p>Entrada:</p><span class="Entrada_ingreso"> 4:03am</span>
+                        <label>
+                            <input type="radio" name="radio" value="carro" id="NuevoCarro">
+                            <ion-icon name="car-sport-outline"></ion-icon>
+                            <input type="radio" name="radio" value="moto" id="NuevaMoto">
+                            <ion-icon name="bicycle-outline"></ion-icon>
+                        </label>
                     </div>
-                    <div>
-                        <p>Tiempo:</p><span class="Tiempo_ingreso"> 40min</span>
-                    </div>
-                    <div>
-                        <p>Costo:</p><span class="Costo_ingreso"> 3.000</span>
-                    </div>
-                    <div>
-                        <p>Puesto:</p><span class="Puesto_ingreso">50</span>
-                    </div>
-                    <button> Salida</b>
+                    <p class="p">Hora de ingreso: </p>
+                    <span class="Hora_nuevoVehiculo">4:52 PM</span>
+                    <button id="button_nuevoVehiculo"> Ingresar</button>
                 </div>
-                
-                
             </article>
         </section>
     </main>
@@ -234,19 +233,19 @@
 
             <label> <ion-icon name="search-outline"></ion-icon><input placeholder="Ingrese la placa" type="text"
                     class="Busqueda"></label>
-            <p class="p">Hora de ingreso: </p>
-            <span class="Hora_nuevoVehiculo">4:52 PM</span>
             <p>Selecione Tipo de Vehiculo</p>
             <div>
                 <label>
-                    <input type="checkbox" name="option1" value="Option 1">
+                    <input type="radio" name="option1" value="Option 1">
                     <ion-icon name="car-sport-outline"></ion-icon>
                 </label>
                 <label>
-                    <input type="checkbox" name="option2" value="Option 2">
+                    <input type="radio" name="option2" value="Option 2">
                     <ion-icon name="bicycle-outline"></ion-icon>
                 </label>
             </div>
+            <p class="p">Hora de ingreso: </p>
+            <span class="Hora_nuevoVehiculo">4:52 PM</span>
             <button> Ingresar</button>
         </div>
     </template>

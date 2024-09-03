@@ -191,7 +191,7 @@ body{
 }
 .timeitem{
     position: relative;
-    border-radius: 50px;
+    border-radius: 15px;
     height: 86%;
     cursor: pointer;
     margin-right: 3vw;
@@ -199,7 +199,7 @@ body{
     display: flex;
     font-size: 1.1rem; 
     color: var(--black1);
-    background-color: #e2e2ec; 
+    background-color: #eae9fa; 
     align-items: center;
     flex-wrap: wrap;
     padding: 0 1.5vw;
@@ -221,14 +221,14 @@ body{
     width: 10vw;
     min-width: 10vw;
     text-align: center;
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 10px;
     margin-top: 2vw;
-    color: var(--white);
+    color: var(--blue);
     font-size: 1.5vw;
     font-weight: 500;
     transition: 0.5s;
@@ -240,7 +240,12 @@ body{
 }
 
 .infoRecuadros div:hover{
-    background-color: #f5f4ff; 
+    background-color: #f5f4ff;
+    border: 1.5px solid var(--gray);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+; 
     color:var(--blue) ;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
     transform: translateY(-2px); 
@@ -262,20 +267,27 @@ body{
     align-content: center;
 }
 .ContainerPrimario{
-    border: 0.2vw solid var(--blue);
+    border: 0.15vw solid var(--blue);
     height: 68vh;
     width: 70%;
     margin-top: 2.5vw;
-    border-radius: 50px;
+    border-radius: 15px;
     padding: 1vw;
     overflow: auto;
-    background-color: var(--gray);
+    /* background-color: #ebebf0; */
+    transition: 0.5s;
+    border: 3px solid var(--gray);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
 
 }
 .ContainerPrimario:hover{
-    background-color: #ebebf0; 
+    background-color: #f5f4ff; 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
     transform: translateY(-2px); 
+
+
 }
 
 .ContainerPrimario::-webkit-scrollbar{
@@ -284,16 +296,22 @@ body{
 }
 
 .Containersecundario{
-    border: .2vw solid var(--blue);
+    border: .15vw solid var(--blue);
     height: 68vh;
     width: 25%;
     margin-top: 2.5vw;
-    border-radius: 50px;
+    border-radius: 15px;
     padding: 1vw;
-    background-color: var(--gray);
+    margin-right: 1vw;
+    transition: 0.5s;
+    border: 3px solid var(--gray);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+
 }
 .Containersecundario:hover{
-    background-color: #ebebf0; 
+    background-color: #f5f4ff; 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
     transform: translateY(-2px); 
 
@@ -308,12 +326,12 @@ body{
     align-items: center;
     align-content: center;
     border: .2vw solid var(--blue);
-    border-radius: 50px;
+    border-radius: 15px;
     margin: 1vw;
 }
 
 .vehiculos:hover{
-    background-color: #f5f4ff; 
+    background-color: #e7e5fc; 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
     transform: translateY(-2px); 
 }
@@ -334,7 +352,7 @@ body{
     color: #ffffff; 
     border: none;
     padding: 10px 20px; 
-    border-radius: 50px; 
+    border-radius: 15px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
     font-size: 16px; 
     cursor: pointer; 
@@ -366,6 +384,7 @@ body{
     width: 100%;
     text-align: center;
     padding:  0 15px;
+    margin-bottom: 5px;
     
 }
 .Fecha_ingresado{
@@ -396,7 +415,7 @@ body{
     color: #ffffff; 
     border: none;
     padding: 10px 20px; 
-    border-radius: 50px; 
+    border-radius: 15px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
     font-size: 1.5rem; 
     cursor: pointer; 
@@ -439,7 +458,7 @@ body{
     color:#6259d6 ;
 }
 .Busqueda{
-    border-radius: 50px;
+    border-radius: 15px;
     width: 100%;
     padding:5px;
     margin-left: 0.7vw;
@@ -459,6 +478,8 @@ body{
     justify-content: space-around;
     align-items: center;
     align-content: center;
+    width: 100%;
+    margin: 0.3vw;
 }
 .Nuevo_Vehiculo div {
     display: flex;
@@ -477,7 +498,7 @@ body{
     color: #ffffff; 
     border: none;
     padding: 10px 20px; 
-    border-radius: 50px; 
+    border-radius: 15px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
     font-size: 1.5rem; 
     cursor: pointer; 
@@ -500,7 +521,7 @@ body{
     font-size: 1.3rem;
     text-align: center;
     font-weight: 900;
-    border-radius: 50px; 
+    border-radius: 15px; 
     padding: 5px;
 }
 /* Para Facturar de vehiculos*/
@@ -540,7 +561,7 @@ body{
     color: #ffffff; 
     border: none;
     padding: 10px 20px; 
-    border-radius: 50px; 
+    border-radius: 15px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
     font-size: 1.5rem; 
     cursor: pointer; 
