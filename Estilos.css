@@ -23,6 +23,9 @@ body{
   
 
 }
+#Ticono{
+    font-size: 4rem;
+}
 .navigation{
     position: fixed;
     width: 300px;
@@ -118,9 +121,9 @@ body{
     box-shadow: 35px -35px 0 10px var(--white);
     pointer-events: none;
 }
-#icono{
+#ticono{
     width: 70px;
-    font-size: 4rem;
+    font-size: 6rem;
 }
 .title1{
     position: relative;
@@ -274,12 +277,16 @@ body{
     border-radius: 15px;
     padding: 1vw;
     overflow: auto;
-    /* background-color: #ebebf0; */
     transition: 0.5s;
     border: 3px solid var(--gray);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
     cursor: pointer; 
     transition: all 0.3s ease; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 
 }
 .ContainerPrimario:hover{
@@ -327,7 +334,9 @@ body{
     align-content: center;
     border: .2vw solid var(--blue);
     border-radius: 15px;
-    margin: 1vw;
+    margin: 0.3vw;
+    width: 85%;
+   
 }
 
 .vehiculos:hover{
@@ -342,10 +351,12 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+   
 }
 
 .vehiculos ion-icon {
     color: #3b30b7;
+    font-size: 3.8rem;
 }
 .vehiculos button{
     background-color: #6259d6; 
@@ -396,13 +407,13 @@ body{
 }
 .ingresado ion-icon {
     color: #6259d6;
-    font-size: 5rem;
-    width: 310vw;
+    font-size: 3rem;
+    width: 5vw;
     height: 10vw;
 }
 .ingresado div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
     align-items: center;
     width: 100%;
@@ -516,7 +527,7 @@ body{
     text-align: center;
     font-weight: 500;
 }
-.Hora_nuevoVehiculo{
+#Hora_nuevoVehiculo{
     color: #3b30b7;
     font-size: 1.3rem;
     text-align: center;
@@ -579,4 +590,59 @@ body{
     border-radius: 50px;
     width: auto;
     padding: 0 10px;
+}
+
+/* Ver disponibilidad  */
+
+.minipadre{
+display: flex;
+width: 100%;
+justify-content: space-around;
+align-items: center;
+
+
+}
+
+.verdisponibilidad{
+    display: flex;
+    flex-direction: column;
+    color: #6259d6;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: 1.5px solid var(--gray);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    height: 80px;
+    margin: 1vw;
+
+}
+.verdisponibilidad:hover{
+    background-color: #6259d6;
+    border: 1.5px solid var(--gray);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    color:var(--white);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+.verdisponibilidad p {
+    font-size: 1.2rem;
+}
+
+.verdisponibilidadfalse{
+    color: var(--black1);
+    background-color: rgba(255, 0, 0, 0.288);
+
+}
+.verdisponibilidadfalse:hover{
+    background-color: rgba(255, 0, 0, 0.5);
+
 }
