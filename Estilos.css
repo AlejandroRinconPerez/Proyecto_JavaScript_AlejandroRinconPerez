@@ -275,7 +275,7 @@ body{
     width: 70%;
     margin-top: 2.5vw;
     border-radius: 15px;
-    padding: 1vw;
+    padding-top:.7vw;
     overflow: auto;
     transition: 0.5s;
     border: 3px solid var(--gray);
@@ -285,7 +285,6 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    align-content: center;
     flex-wrap: wrap;
 
 }
@@ -334,7 +333,7 @@ body{
     align-content: center;
     border: .2vw solid var(--blue);
     border-radius: 15px;
-    margin: 0.3vw;
+    margin-top: 1vw;
     width: 85%;
    
 }

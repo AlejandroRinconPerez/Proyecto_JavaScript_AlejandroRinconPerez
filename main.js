@@ -242,7 +242,7 @@ let hora = document.querySelector("#Hora_nuevoVehiculo");
 
   memoria.vehiculos[text_nuevovehiculo].visitas = memoria.vehiculos[text_nuevovehiculo].visitas || [];
   let visita = {
-    id:memoria.vehiculos[text_nuevovehiculo].visitas.length +1,
+    id:puesto,
     entrada: Registro_Hora(),
     salida: "",
     tiempo: "",
@@ -265,7 +265,7 @@ function ingresados() {
     let objeto = memoria.vehiculos;
     for (let llave in objeto) {
         let nuevoobjeto = objeto[llave];
-        nuevoobjeto.visitas.sort((a, b) => b.id - a.id);
+        nuevoobjeto.visitas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
         if (nuevoobjeto.ingresado === true) {
             const productClone = template.content.cloneNode(true);
 
@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function() {
                let boton =productClone.querySelector("#boton_Salida")
                
               let Objeto = memoria.vehiculos[placa];
-              Objeto.visitas.sort((a,b) => b.id - a.id)
+              Objeto.visitas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
                 var  objetolista = Objeto.visitas[0]
                 if (Objeto.tipo === "carro") {
                     icono.setAttribute("name", "car-outline");
@@ -394,7 +394,7 @@ function  GeredarFactura_Salida(placa){
                 let botonfactura = productClone.querySelector(".botonfactura")
                
               let Objeto = memoria.vehiculos[placa];
-              Objeto.visitas.sort((a,b) => b.id - a.id)
+              Objeto.visitas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
                 var  objetolista = Objeto.visitas[0]
                 if (Objeto.tipo === "carro") {
                     icono.setAttribute("name", "car-outline");
@@ -423,14 +423,16 @@ function DarSalida_Salida(placa ,salidahora,costos, Tiempos ){
     if(Objeto.ingresado == false){
         alert("Carro no ingresado no puede darle salida")
     }
+    
+    Objeto.visitas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
     Objeto.ingresado = false
-    Objeto.visitas.sort((a,b) => b.id - a.id)
     Objeto.visitas[0].tiempo =Tiempos
     Objeto.visitas[0].costo =  costos
     Objeto.visitas[0].salida = salidahora
+
+
     let tipo = Objeto.tipo
     let idpuesto = Objeto.visitas[0].id
-    let Objetopuestos = memoria.puestos
     let lista_puestos =[]
     if ( tipo == "carro"){
         lista_puestos = memoria.puestos.carros
@@ -438,15 +440,16 @@ function DarSalida_Salida(placa ,salidahora,costos, Tiempos ){
         lista_puestos = memoria.puestos.motos
     }
     lista_puestos.forEach(element => {
-        if (element.id ==idpuesto){
+        if (element.id == idpuesto){
             element.disponible = true
         }
         
     });
+    localStorage.setItem("Parking", JSON.stringify(memoria));
     ingresados()
     Generaringreso()
 
-    localStorage.setItem("Parking", JSON.stringify(memoria));
+    
 }
     }
 
