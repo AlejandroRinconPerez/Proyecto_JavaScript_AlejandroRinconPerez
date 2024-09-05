@@ -13,8 +13,9 @@
     --black2: #999;
 }
 body{
-    min-height:100vh;
+    height:100vh;
     overflow-x: hidden;
+    width: 100vw;
     
 }
 .header-container{
@@ -645,3 +646,22 @@ align-items: center;
     background-color: rgba(255, 0, 0, 0.5);
 
 }
+
+
+
+  
+  
+@media screen and (max-width: 1000px) {
+    body {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/023/104/749/non_2x/not-available-rubber-stamp-seal-vector.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: #fff;
+        display: none;
+      }
+    .contenido {
+      display: none;
+    }
+  }
+  
