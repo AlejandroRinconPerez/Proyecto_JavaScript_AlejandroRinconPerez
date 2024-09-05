@@ -111,7 +111,7 @@ Para visualizar y trabajar con esta página web, sigue estos pasos:
 
 ### Herramientas de Desarrollo
 - **Visual Studio Code**: Editor de código.
-
+  
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
