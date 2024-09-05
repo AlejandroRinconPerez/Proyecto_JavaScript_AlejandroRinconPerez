@@ -21,6 +21,7 @@
 | Indice | Titulo  |
 |--|--|
 | 📍 | Descripción |
+| 🧩 | Innstalacion |
 | 📦 | Caracteristicas |
 | 🧩 | Estructura |
 | 🤝 |Lisencia |
@@ -71,7 +72,7 @@ Para instalar y ejecutar la página web localmente:
 
    1. Clona el repositorio:
    ```bash
-   $ git clone https://github.com/AlejandroRinconPerez/Proyecto_JavaScript_AlejandroRinconPerez/new/main?filename=README.md
+   $ git clone[(https://github.com/AlejandroRinconPerez/Proyecto_JavaScript_AlejandroRinconPerez.git)
    ```
    2. Navega al directorio del proyecto:
    
@@ -111,7 +112,6 @@ Para visualizar y trabajar con esta página web, sigue estos pasos:
 ### Herramientas de Desarrollo
 - **Visual Studio Code**: Editor de código.
 
-- 
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
