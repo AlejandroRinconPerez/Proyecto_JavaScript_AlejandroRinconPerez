@@ -65,8 +65,7 @@ function reloj() {
   let fecha = document.querySelector("#Fecha_Vivo");
   fecha.textContent = Fecha();
   hora.textContent = horaFormateada(Registro_Hora());
-  contadormotos();
-  contadorcarros();
+ 
   setTimeout(reloj, 60000);
   return;
 }
@@ -673,8 +672,7 @@ botoncontadorcarros.addEventListener("click", function () {
   contadorcarros();
 });
 
-contadorcarros();
-contadormotos();
+
 
 function validarPlaca2(textoPlaca) {
   const regexCarro = /^[A-Z]{3}\d{3}$/;
@@ -684,30 +682,27 @@ function validarPlaca2(textoPlaca) {
 }
 
 function barra() {
-  
-  
   let placa = document.getElementById("BarradeBusqueda").value;
 
   if (!validarPlaca2(placa)) {
     console.log("Placa no válida:", placa);
-    return
+    return;
   }
-
-  document.getElementById("BarradeBusqueda").value = "";
+  console.log(placa);
 
   let memoria = JSON.parse(localStorage.getItem("Parking"));
-
   let objeto = memoria.vehiculos;
   console.log(objeto[placa].ingresado);
-  
+
   var container = document.querySelector(".ContainerPrimario");
   container.innerHTML = "";
-  if (objeto[placa].ingresado == true) {
-     
-    let template = document.getElementById("vehiculo-template");
-    let nuevo_objeto_ordenado = objeto[placa].visitas.sort((a, b) => new Date(b.entrada) - new Date(a.entrada));
-    const productClone = template.content.cloneNode(true);
 
+  if (objeto[placa].ingresado === true) {
+    let template = document.getElementById("vehiculo-template");
+    let nuevo_objeto_ordenado = objeto[placa].visitas.sort(
+      (a, b) => new Date(b.entrada) - new Date(a.entrada)
+    );
+    const productClone = template.content.cloneNode(true);
     let icono = productClone.querySelector(".icono");
     let placaElement = productClone.querySelector(".placa");
     let Fecha = productClone.querySelector(".fecha");
@@ -715,66 +710,82 @@ function barra() {
     let ingreso = productClone.querySelector(".Tiempo");
     let costo = productClone.querySelector(".Costo");
     let botonSalida = productClone.querySelector(".botonsalida1");
-    let primeraVisita = nuevo_objeto_ordenado[0]
+    let primeraVisita = nuevo_objeto_ordenado[0];
+
     placaElement.textContent = placa;
-    Fecha.textContent =formatearFecha(primeraVisita.entrada);
+    Fecha.textContent = formatearFecha(primeraVisita.entrada);
     entrada.textContent = horaFormateada(primeraVisita.entrada);
-    ingreso.textContent = Diferencia_Entrada_Salida(primeraVisita.entrada,Registro_Hora());
+    ingreso.textContent = Diferencia_Entrada_Salida(
+      primeraVisita.entrada,
+      Registro_Hora()
+    );
+
     if (objeto[placa].tipo === "carro") {
       icono.setAttribute("name", "car-outline");
-      costo.textContent =Diferencia_Entrada_Salida(primeraVisita.entrada, Registro_Hora()) * 100;
+      costo.textContent =
+        Diferencia_Entrada_Salida(primeraVisita.entrada, Registro_Hora()) * 100;
     } else {
       icono.setAttribute("name", "bicycle-outline");
       costo.textContent =
         Diferencia_Entrada_Salida(primeraVisita.entrada, Registro_Hora()) * 50;
     }
+
     botonSalida.addEventListener("click", function () {
       GeredarSalida(placa);
       contadormotos();
       contadorcarros();
     });
-    container.appendChild(productClone)
-       
+
+    container.appendChild(productClone);
   }
   
-   container = document.querySelector(".ContainerPrimario");
+
+
+  // Segunda parte: Historial
+  container = document.querySelector(".ContainerPrimario");
   let template = document.getElementById("Historial");
- 
-  let  nuevoobjetoordenado = objeto[placa].visitas.sort((a, b) => new Date(b.entrada) - new Date(a.entrada));
-    const productClone1 = template.content.cloneNode(true);
-    let icono = productClone1.querySelector(".icono");
+
+  let nuevo_objeto_ordenado = objeto[placa].visitas.sort(
+    (a, b) => new Date(b.entrada) - new Date(a.entrada)
+  );
+
+  nuevo_objeto_ordenado.forEach((element) => {
+    const productClone1 = template.content.cloneNode(true); 
+    let icono = productClone1.querySelector(".icono"); // Aquí definimos `icono` correctamente
     let placaElement = productClone1.querySelector(".placa");
     let Fecha = productClone1.querySelector(".fecha");
     let entrada = productClone1.querySelector(".ingreso");
     let ingreso = productClone1.querySelector(".Tiempo");
     let costo = productClone1.querySelector(".Costo");
     let Salida = productClone1.querySelector(".salida");
-    nuevoobjetoordenado.forEach((element) => {
-      const productClone1 = template.content.cloneNode(true);
-      console.log(element)
-      placaElement.textContent = placa;
-      Fecha.textContent = formatearFecha(element.salida);
-      entrada.textContent = horaFormateada(element.entrada);
-      if (objeto[placa].tipo === "carro") {
-        icono.setAttribute("name", "car-outline");
-        costo.textContent =
-          Diferencia_Entrada_Salida(element.entrada, element.salida) * 100;
-      } else {
-        icono.setAttribute("name", "bicycle-outline");
-        costo.textContent =
-          Diferencia_Entrada_Salida(element.entrada, element.salida) * 50;
-      }
-      ingreso.textContent = Diferencia_Entrada_Salida(
-        element.entrada,
-        element.salida
-      );
-      Salida.textContent = horaFormateada(element.salida);
 
-      container.appendChild(productClone1);
-      
+    placaElement.textContent = placa;
+    Fecha.textContent = formatearFecha(element.salida);
+    entrada.textContent = horaFormateada(element.entrada);
 
-    })
-  }
+    if (objeto[placa].tipo === "carro") {
+      icono.setAttribute("name", "car-outline");
+      costo.textContent =
+        Diferencia_Entrada_Salida(element.entrada, element.salida) * 100;
+    } else {
+      icono.setAttribute("name", "bicycle-outline");
+      costo.textContent =
+        Diferencia_Entrada_Salida(element.entrada, element.salida) * 50;
+    }
+
+    ingreso.textContent = Diferencia_Entrada_Salida(
+      element.entrada,
+      element.salida
+    );
+    Salida.textContent = horaFormateada(element.salida);
+
+    container.appendChild(productClone1);
+  });
+
+  document.getElementById("BarradeBusqueda").value = "";
+}
+
+
 
 let BarradeBusqueda2 = document.getElementById("BarradeBusqueda");
 BarradeBusqueda2.addEventListener("input", function () {
