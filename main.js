@@ -314,6 +314,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button_Registro.addEventListener("click", function (event) {
       event.preventDefault();
       Generaringreso();
+      ingresados()
     });
   } else {
     console.error(
@@ -781,4 +782,16 @@ BarradeBusqueda2.addEventListener("keydown", function (event) {
     barra();
   }
 });
+
+botoningreso = document.querySelector("#salida1")
+botoningreso.addEventListener("click",function (event) {
+  Generaringreso()
+  ingresados()
+}); 
+
+botonvehiculoingresado = document.querySelector("#vehiculoingresado")
+botonvehiculoingresado.addEventListener("click", function (event) {
+  ingresados()
+}); 
+
 
