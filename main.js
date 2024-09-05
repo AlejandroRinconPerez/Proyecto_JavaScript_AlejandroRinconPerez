@@ -296,6 +296,9 @@ function ingresados() {
           Diferencia_Entrada_Salida(primeraVisita.entrada, Registro_Hora()) *
           50;
       }
+      
+
+
       botonSalida.addEventListener("click", function () {
         GeredarSalida(llave);
         contadormotos();
@@ -793,5 +796,6 @@ botonvehiculoingresado = document.querySelector("#vehiculoingresado")
 botonvehiculoingresado.addEventListener("click", function (event) {
   ingresados()
 }); 
+
 
 
