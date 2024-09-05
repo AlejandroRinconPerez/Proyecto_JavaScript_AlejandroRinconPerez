@@ -70,14 +70,14 @@
                         <span class="title">Vehiculos ingresados</span>
                     </a>
                 </li>
-                <!-- <li>
-                    <a>
+                <li>
+                    <a id= "Edicionmultple">
                         <span class="icon">
                             <ion-icon name="contrast-outline"></ion-icon>
                         </span>
-                        <span class="title"> Modo Oscuro Pronto</span>
+                        <span class="title">Edicion</span>
                     </a>
-                </li> -->
+                </li>
             </ul>
 
         </nav>
@@ -116,7 +116,7 @@
 
             </article>
             <article class="Containersecundario">
-              
+                
 
             </article>
         </section>
@@ -188,6 +188,20 @@
             <p> <span class="idt">4</span></p>
         </div>
 
+    </template>
+    <template id="Edicion">
+        <div class="Nuevo_Vehiculo">
+            <span class="title2"> ParkEasy</span>
+            <ion-icon name="car-outline" class="icono icono2"></ion-icon>
+            <ion-icon name="search-outline"></ion-icon>
+            <label> <input placeholder="Ingrese la placa a cambiar " type="text"
+                    class="Busqueda" id="placamala" style="text-transform: uppercase;"></label>
+
+            <label> <input placeholder="Nueva placa" type="text"
+                    class="Busqueda" id="nuevaplaca" style="text-transform: uppercase;"></label>
+            
+            <button id="butoneditar"> Editar Placa</button>
+        </div>
     </template>
 
 

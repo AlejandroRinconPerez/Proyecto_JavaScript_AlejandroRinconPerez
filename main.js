@@ -310,7 +310,7 @@ function ingresados() {
   }
 }
 
-//Boton Registro que activa la funsion de ingresados y la funcion de ingresar un carro o moto
+
 document.addEventListener("DOMContentLoaded", function () {
   let button_Registro = document.getElementById("Ingreso_placas");
   if (button_Registro) {
@@ -692,6 +692,7 @@ function barra() {
     console.log("Placa no válida:", placa);
     return
   }
+
   document.getElementById("BarradeBusqueda").value = "";
 
   let memoria = JSON.parse(localStorage.getItem("Parking"));
@@ -797,5 +798,53 @@ botonvehiculoingresado.addEventListener("click", function (event) {
   ingresados()
 }); 
 
+
+
+function actualizarPlaca() {
+  
+  let placamala = document.getElementById("placamala").value.trim().toUpperCase();
+  let placabuena = document.getElementById("nuevaplaca").value.trim().toUpperCase();
+  let memoria = JSON.parse(localStorage.getItem("Parking"));
+  if (!memoria || !memoria.vehiculos) {
+      console.log("No hay datos en el almacenamiento local.");
+      return;
+  }
+  let objeto = memoria.vehiculos;
+  if (!objeto[placamala]) {
+      console.log("La placa actual no existe:", placamala);
+      return;
+  }
+
+  if (objeto[placabuena] && placamala !== placabuena) {
+      console.log("La nueva placa ya está en uso:", placabuena);
+      return;
+  }
+  objeto[placabuena] = objeto[placamala];
+  delete objeto[placamala];
+  localStorage.setItem("Parking", JSON.stringify(memoria));
+  console.log("Placa actualizada correctamente.");
+  document.getElementById("placamala").value = '';
+  document.getElementById("nuevaplaca").value = '';
+}
+
+
+function Generareditar() {
+  let containersecundario = document.querySelector(".Containersecundario");
+  let template = document.getElementById("Edicion");
+  const productClone = template.content.cloneNode(true);
+  containersecundario.innerHTML = "";
+  containersecundario.appendChild(productClone);
+  let button_ingreso = document.getElementById("butoneditar");
+  button_ingreso.addEventListener("click", actualizarPlaca);
+  if (butoneditar) {
+  
+    button_ingreso.addEventListener("click",  actualizarPlaca);
+
+
+  }
+}
+
+ let Edicionmultple =document.querySelector("#Edicionmultple")
+ Edicionmultple.addEventListener("click",Generareditar )
 
 
